@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
-    public int lives = 3; // Player lives
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +17,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void updateLives() {
-        lives--;
-        Debug.Log(lives);
+    public void LoadGame(){
+        SceneManager.LoadScene("Android-Main Menu");
     }
 }
