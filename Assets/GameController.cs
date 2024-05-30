@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour
             Debug.Log("Game Over");
             // For now, just stop the game
             Time.timeScale = 0;
+            SceneManager.LoadScene("LoseScene");
         }
     }
 

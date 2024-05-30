@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class StartAgain : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class GameOver : MonoBehaviour
     }
 
     public void LoadGame(){
-        SceneManager.LoadScene("Android-Main Menu");
+        SceneManager.LoadScene("StartScene");
     }
 }
