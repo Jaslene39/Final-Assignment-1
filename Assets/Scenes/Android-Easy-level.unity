@@ -1142,6 +1142,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123184382}
   m_CullTransparentMesh: 1
+--- !u!1 &123832095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123832097}
+  - component: {fileID: 123832096}
+  m_Layer: 5
+  m_Name: QuizManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &123832096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123832095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc54f4e771168043a1b4adc913fb35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QnA:
+  - Question: A chemical element with the symbol "Fe" and atomic number 26.
+    Answers:
+    - Iron
+    - Silver
+    - Copper
+    - Gold
+    CorrectAnswer: 1
+  - Question: The capital city of France.
+    Answers:
+    - Berlin
+    - Madrid
+    - Paris
+    - Rome
+    CorrectAnswer: 3
+  - Question: The largest planet in the solar system.
+    Answers:
+    - Earth
+    - Mars
+    - Jupiter
+    - Saturn
+    CorrectAnswer: 3
+  - Question: Which country is known as the Land of the Rising Sun?
+    Answers:
+    - China
+    - Japan
+    - South Korea
+    - Thailand
+    CorrectAnswer: 2
+  - Question: The longest river in the world.
+    Answers:
+    - Amazon River
+    - Nile River
+    - Yangtze River
+    - Mississippi River
+    CorrectAnswer: 2
+  - Question: A type of data storage device that uses electronic circuits to store
+      and retrieve digital information.
+    Answers:
+    - Hard Disk Drive
+    - Solid State Drive
+    - Optical Disc
+    - Magnetic Tape
+    CorrectAnswer: 2
+  - Question: A programming paradigm that emphasizes the use of objects and classes
+      for modeling real-world entities.
+    Answers:
+    - Functional Programming
+    - Procedural Programming
+    - Object-Oriented Programming
+    - Logic Programming
+    CorrectAnswer: 3
+  - Question: A term used in psychology to describe "a state of intense happiness
+      and self-confidence.
+    Answers:
+    - Euphoria
+    - Melancholy
+    - Anxiety
+    - Dysthymia
+    CorrectAnswer: 1
+  options:
+  - {fileID: 578119212}
+  - {fileID: 872652628}
+  - {fileID: 1468648444}
+  - {fileID: 755863403}
+  currentQuestion: 0
+  QuestionTxt: {fileID: 1374476279}
+--- !u!224 &123832097
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123832095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 530472189}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.8880001}
+  m_AnchoredPosition: {x: 250, y: 699}
+  m_SizeDelta: {x: 100, y: -644}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &125835766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,6 +3085,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 123832097}
   - {fileID: 1269358593}
   - {fileID: 512703680}
   - {fileID: 1832988950}
@@ -2993,6 +3109,7 @@ GameObject:
   - component: {fileID: 578119216}
   - component: {fileID: 578119215}
   - component: {fileID: 578119214}
+  - component: {fileID: 578119217}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -3011,12 +3128,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Children:
+  - {fileID: 993692829}
+  m_Father: {fileID: 1951226252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286.94824, y: -712.38525}
+  m_AnchoredPosition: {x: -286.68375, y: -44.47534}
   m_SizeDelta: {x: 200.459, y: 67.973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578119214
@@ -3101,6 +3219,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578119212}
   m_CullTransparentMesh: 1
+--- !u!114 &578119217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578119212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654e56e68a761048a2033710b0e438f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 123832096}
 --- !u!1 &702035439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,6 +3710,7 @@ GameObject:
   - component: {fileID: 755863407}
   - component: {fileID: 755863406}
   - component: {fileID: 755863405}
+  - component: {fileID: 755863408}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -3596,12 +3729,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Children:
+  - {fileID: 1387136558}
+  m_Father: {fileID: 1951226252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.918, y: -836.43085}
+  m_AnchoredPosition: {x: 219.18246, y: -168.52087}
   m_SizeDelta: {x: 200.459, y: 67.973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755863405
@@ -3686,6 +3820,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755863403}
   m_CullTransparentMesh: 1
+--- !u!114 &755863408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755863403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654e56e68a761048a2033710b0e438f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 123832096}
 --- !u!1 &771473317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,7 +3850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &771473318
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4327,6 +4475,7 @@ GameObject:
   - component: {fileID: 872652632}
   - component: {fileID: 872652631}
   - component: {fileID: 872652630}
+  - component: {fileID: 872652633}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -4345,12 +4494,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Children:
+  - {fileID: 1966350415}
+  m_Father: {fileID: 1951226252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286.94824, y: -836.43085}
+  m_AnchoredPosition: {x: -286.68375, y: -168.52087}
   m_SizeDelta: {x: 200.459, y: 67.973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872652630
@@ -4435,6 +4585,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872652628}
   m_CullTransparentMesh: 1
+--- !u!114 &872652633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872652628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654e56e68a761048a2033710b0e438f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 123832096}
 --- !u!1 &876080014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,15 +4635,6 @@ RectTransform:
   - {fileID: 802935090}
   - {fileID: 1838967347}
   - {fileID: 1951226252}
-  - {fileID: 578119213}
-  - {fileID: 993692829}
-  - {fileID: 872652629}
-  - {fileID: 1966350415}
-  - {fileID: 1468648445}
-  - {fileID: 1617816444}
-  - {fileID: 755863404}
-  - {fileID: 1387136558}
-  - {fileID: 1374476278}
   - {fileID: 1005012957}
   - {fileID: 1979129796}
   m_Father: {fileID: 512703680}
@@ -5067,12 +5222,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Father: {fileID: 578119213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -286.94824, y: -712.38525}
-  m_SizeDelta: {x: 100.459, y: -32.027}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993692830
 MonoBehaviour:
@@ -6681,11 +6836,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Father: {fileID: 1951226252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.44, y: -475.08}
+  m_AnchoredPosition: {x: -85.17551, y: 141}
   m_SizeDelta: {x: 668.195, y: 169.927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374476279
@@ -6708,10 +6863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Question 1
-
-
-    A chemical element with the symbol "Fe" and atomic number
+  m_text: 'Question 1: A chemical element with the symbol "Fe" and atomic number
     26.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6939,12 +7091,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Father: {fileID: 755863404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 218.918, y: -836.43085}
-  m_SizeDelta: {x: 100.459, y: -32.027}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387136559
 MonoBehaviour:
@@ -7177,6 +7329,7 @@ GameObject:
   - component: {fileID: 1468648448}
   - component: {fileID: 1468648447}
   - component: {fileID: 1468648446}
+  - component: {fileID: 1468648449}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -7195,12 +7348,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Children:
+  - {fileID: 1617816444}
+  m_Father: {fileID: 1951226252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.912, y: -712.386}
+  m_AnchoredPosition: {x: 219.17647, y: -44.476074}
   m_SizeDelta: {x: 200.459, y: 67.973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468648446
@@ -7285,6 +7439,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468648444}
   m_CullTransparentMesh: 1
+--- !u!114 &1468648449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468648444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654e56e68a761048a2033710b0e438f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 123832096}
 --- !u!1 &1480366559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7927,12 +8095,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Father: {fileID: 1468648445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 218.912, y: -712.386}
-  m_SizeDelta: {x: 100.459, y: -32.027}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617816445
 MonoBehaviour:
@@ -9350,7 +9518,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1374476278}
+  - {fileID: 578119213}
+  - {fileID: 872652629}
+  - {fileID: 1468648445}
+  - {fileID: 755863404}
   m_Father: {fileID: 876080015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9562,12 +9735,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 876080015}
+  m_Father: {fileID: 872652629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -286.94824, y: -836.43085}
-  m_SizeDelta: {x: 100.459, y: -32.027}
+  m_AnchoredPosition: {x: 0, y: -0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966350416
 MonoBehaviour:
