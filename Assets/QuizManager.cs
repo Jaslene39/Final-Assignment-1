@@ -10,22 +10,36 @@ public class QuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
     public TextMeshProUGUI QuestionTxt;
+    private string targetTag = "Respawn";
+    GameController _gameController;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         generateQuestion();
     }
 
-    public void correct()
+    public void checkAnswer(bool ans)
     {
+        _gameController.chooseAnswer();
+        GameObject helicopterFound = GameObject.FindGameObjectWithTag(targetTag);
+        if (ans) {
+            helicopterFound.GetComponent<Helicopter>().DestroyGameObject();
+        } else {
+            helicopterFound.GetComponent<Helicopter>().SelfKill();
+        }
+        processForNextQuestion();
+    }
+
+    public void processForNextQuestion() {
         StartCoroutine(DelayBeforeNextQuestion());
     }
 
     IEnumerator DelayBeforeNextQuestion()
     {
         DisableAllButtons();
-        yield return new WaitForSeconds(1f); // Adjust the delay time as needed
+        yield return new WaitForSeconds(2f); // Adjust the delay time as needed
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
         EnableAllButtons();
@@ -63,6 +77,7 @@ public class QuizManager : MonoBehaviour
     void generateQuestion() {
         currentQuestion = Random.Range(0, QnA.Count);
         QuestionTxt.text = QnA[currentQuestion].Question;
+        _gameController.spawnHelicopter();
         SetAnswer();
     }
 }

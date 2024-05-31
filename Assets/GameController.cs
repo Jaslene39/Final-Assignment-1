@@ -8,32 +8,24 @@ public class GameController : MonoBehaviour
 {
     public GameObject helicopter;
     public TextMeshProUGUI livesText; // UI Text to display the number of lives
-
-    private float TimeLeft = 0.1f;
     private int lives = 3; // Total number of lives
-    private bool TimerOn = false;
     private int xcount;
+    private bool gotAnswer = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        TimerOn = true;
+    public void spawnHelicopter() {
+        gotAnswer = false;
+        Debug.Log("Spawn helicopter");
+        xcount = Random.Range(-100, 100);
+        Instantiate(helicopter, new Vector2(transform.position.x + xcount, transform.position.y), Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (TimerOn) {
-            if (TimeLeft > 0) {
-                TimeLeft -= Time.deltaTime;
-            } else {
-                Debug.Log("Spawn helicopter");
-                TimeLeft = 10;
-                xcount = Random.Range(-100, 100);
+    // Set answer choose
+    public void chooseAnswer() {
+        gotAnswer = true;
+    }
 
-                Instantiate(helicopter, new Vector2(transform.position.x + xcount, transform.position.y), Quaternion.identity);
-            }
-        }
+    public bool getGotAnswer() {
+        return gotAnswer;
     }
 
     public void decrementLives() {

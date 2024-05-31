@@ -14,13 +14,11 @@ public class AnswerScript : MonoBehaviour
         Button button = GetComponent<Button>();
 
         if (isCorrect) {
-            quizManager.correct();
-            Debug.Log("Correct Answer");
+            quizManager.checkAnswer(isCorrect);
             button.GetComponent<Image>().color = Color.green;
             button.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         } else {
-            quizManager.correct();
-            Debug.Log("Incorrect Answer");
+            quizManager.checkAnswer(isCorrect);
             button.GetComponent<Image>().color = Color.red;
             button.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         }

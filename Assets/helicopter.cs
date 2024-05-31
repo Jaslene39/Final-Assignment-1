@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class Helicopter : MonoBehaviour
 {
-    public float fallSpeed = 5f; // Base falling speed
-    public float increaseSpeedFactor = 2f; // Factor by which speed increases on wrong answer
+    public float fallSpeed = 100f; // Base falling speed
     public Sprite explodedHelicopter;
 
     GameController _gameController;
+    QuizManager _quizManager;
     private bool isFalling = false;
     private float currentFallSpeed;
     private bool hasCollided = false; // Flag to check if collision has already occurred
@@ -18,6 +18,7 @@ public class Helicopter : MonoBehaviour
     void Start()
     {
         _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        _quizManager = GameObject.FindGameObjectWithTag("QuizController").GetComponent<QuizManager>();
         currentFallSpeed = fallSpeed;
         isFalling = true;
     }
@@ -30,14 +31,25 @@ public class Helicopter : MonoBehaviour
         }
     }
 
+    public void DestroyGameObject() {
+        isFalling = false;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = explodedHelicopter;
+        Destroy(gameObject, 1);
+    }
+
+    public void SelfKill() {
+        currentFallSpeed = fallSpeed * 120;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision) {
+        if (!(_gameController.getGotAnswer()) && !hasCollided) {
+            _quizManager.processForNextQuestion();
+        }
+
         if (collision.gameObject.tag == "House" && !hasCollided) {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = explodedHelicopter;
-            isFalling = false;
             hasCollided = true;
             _gameController.decrementLives();
-            Destroy(gameObject, 1);
-            
+            DestroyGameObject();
         }
     }
 }
