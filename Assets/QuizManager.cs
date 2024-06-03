@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI QuestionTxt;
     private string targetTag = "Respawn";
     GameController _gameController;
+    private int correctAnswers = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(QnA.Count);
         _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         generateQuestion();
     }
@@ -26,6 +29,7 @@ public class QuizManager : MonoBehaviour
         GameObject helicopterFound = GameObject.FindGameObjectWithTag(targetTag);
         if (ans) {
             helicopterFound.GetComponent<Helicopter>().DestroyGameObject();
+            correctAnswers++;
         } else {
             helicopterFound.GetComponent<Helicopter>().SelfKill();
         }
@@ -33,16 +37,30 @@ public class QuizManager : MonoBehaviour
     }
 
     public void processForNextQuestion() {
-        StartCoroutine(DelayBeforeNextQuestion());
+        if (QnA.Count == 1 ) // Check for end conditions
+        {
+            StartCoroutine(DelayBeforeEnd());
+        }
+        else
+        {
+            DisableAllButtons();
+            StartCoroutine(DelayBeforeNextQuestion());
+        }
     }
 
     IEnumerator DelayBeforeNextQuestion()
     {
-        DisableAllButtons();
         yield return new WaitForSeconds(2f); // Adjust the delay time as needed
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
         EnableAllButtons();
+    }
+
+    IEnumerator DelayBeforeEnd()
+    {
+        DisableAllButtons();
+        yield return new WaitForSeconds(2f); // Adjust the delay time as needed
+        generateQuestion();
     }
 
     void DisableAllButtons()
@@ -75,9 +93,23 @@ public class QuizManager : MonoBehaviour
     }
 
     void generateQuestion() {
-        currentQuestion = Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
-        _gameController.spawnHelicopter();
-        SetAnswer();
+        if (QnA.Count > 0)
+        {
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionTxt.text = QnA[currentQuestion].Question;
+            _gameController.spawnHelicopter();
+            SetAnswer();
+        }
+        else
+        {
+            if (_gameController.getLives() > 0)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+            else
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
+        }
     }
 }

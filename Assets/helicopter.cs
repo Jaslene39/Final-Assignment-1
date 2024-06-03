@@ -8,6 +8,7 @@ public class Helicopter : MonoBehaviour
 {
     public float fallSpeed = 100f; // Base falling speed
     public Sprite explodedHelicopter;
+    public AudioClip explosionClip;
 
     GameController _gameController;
     QuizManager _quizManager;
@@ -21,6 +22,7 @@ public class Helicopter : MonoBehaviour
         _quizManager = GameObject.FindGameObjectWithTag("QuizController").GetComponent<QuizManager>();
         currentFallSpeed = fallSpeed;
         isFalling = true;
+        Debug.Log("is falling " + isFalling);
     }
 
     void Update()
@@ -34,6 +36,8 @@ public class Helicopter : MonoBehaviour
     public void DestroyGameObject() {
         isFalling = false;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = explodedHelicopter;
+        this.gameObject.GetComponent<AudioSource>().clip = explosionClip;
+        GetComponent<AudioSource>().Play();
         Destroy(gameObject, 1);
     }
 

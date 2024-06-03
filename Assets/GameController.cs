@@ -28,6 +28,10 @@ public class GameController : MonoBehaviour
         return gotAnswer;
     }
 
+    public int getLives() {
+        return lives;
+    } 
+
     public void decrementLives() {
         lives--;
         UpdateLivesText(lives);
