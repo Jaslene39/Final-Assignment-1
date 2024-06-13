@@ -39,8 +39,6 @@ public class GameController : MonoBehaviour
         {
             // Implement game over logic here
             Debug.Log("Game Over");
-            // For now, just stop the game
-            Time.timeScale = 0;
             SceneManager.LoadScene("LoseScene");
         }
     }

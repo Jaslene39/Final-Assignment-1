@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Helicopter : MonoBehaviour
 {
-    public float fallSpeed = 100f; // Base falling speed
+    public float fallSpeed = 10f; // Base falling speed
     public Sprite explodedHelicopter;
     public AudioClip explosionClip;
 
@@ -42,7 +42,7 @@ public class Helicopter : MonoBehaviour
     }
 
     public void SelfKill() {
-        currentFallSpeed = fallSpeed * 120;
+        currentFallSpeed = fallSpeed * 80;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

@@ -50,7 +50,7 @@ public class QuizManager : MonoBehaviour
 
     IEnumerator DelayBeforeNextQuestion()
     {
-        yield return new WaitForSeconds(2f); // Adjust the delay time as needed
+        yield return new WaitForSeconds(3f); // Adjust the delay time as needed
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
         EnableAllButtons();
@@ -59,7 +59,7 @@ public class QuizManager : MonoBehaviour
     IEnumerator DelayBeforeEnd()
     {
         DisableAllButtons();
-        yield return new WaitForSeconds(2f); // Adjust the delay time as needed
+        yield return new WaitForSeconds(3f); // Adjust the delay time as needed
         generateQuestion();
     }
 

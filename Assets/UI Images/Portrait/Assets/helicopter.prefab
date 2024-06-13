@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d39608e57df6b984685c974373f3b1a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e22f6c50a4f724a80a1d2d7b2a2dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 5
+  fallSpeed: 10
   explodedHelicopter: {fileID: 21300000, guid: 516d18257aa9507469d7327a35ae355f, type: 3}
   explosionClip: {fileID: 8300000, guid: 5cd42e7243396ee45be30b39da7e54dc, type: 3}
 --- !u!82 &6593649310493728338
