@@ -99,10 +99,15 @@ public class QuizManager : MonoBehaviour
             QuestionTxt.text = QnA[currentQuestion].Question;
             _gameController.spawnHelicopter();
             SetAnswer();
+
+             if (correctAnswers == 10)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
         }
         else
         {
-            if (_gameController.getLives() > 0)
+            if (_gameController.getLives() > 0 || correctAnswers == 10)
             {
                 SceneManager.LoadScene("WinScene");
             }
